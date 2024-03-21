@@ -10,7 +10,7 @@ const port=3001;
 app.listen(port, console.log("Listening on port " + port));
 
 
-const connectDB=require('../Task Manager/db/connect')
+const connectDB=require('../task-manager/db/connect')
 
 //app.use('/task-manager/tasks', router)
 
