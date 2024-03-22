@@ -1,5 +1,11 @@
 const Task=require('../models/Task');
-const getAllTasks=(req,res)=>{
+const getAllTasks= async (req,res)=>{
+    try {
+        const tasks = await Task.find({});
+        res.status(200).json({tasks})
+    } catch (error) {
+        
+    }
 
 }
 const createTask= async (req,res)=>{
@@ -10,9 +16,9 @@ const createTask= async (req,res)=>{
         console.log(error);
     }
 }
-const getTask= (req,res)=>{}
-const updateTask= (req,res)=>{}
-const deleteTask= (req,res)=>{}
+const getTask= async (req,res)=>{}
+const updateTask= async (req,res)=>{}
+const deleteTask= async (req,res)=>{}
 
 module.exports={getAllTasks, createTask, getTask, updateTask, deleteTask};
 
