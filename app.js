@@ -6,11 +6,12 @@ app.use(express.json());
 
 
 const port=3001;
+const connectDB=require('../task-manager/db/connect')
+
 
 app.listen(port, console.log("Listening on port " + port));
 
 
-const connectDB=require('../task-manager/db/connect')
 
 //app.use('/task-manager/tasks', router)
 
