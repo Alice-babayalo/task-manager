@@ -11,7 +11,7 @@ const router=require('../task-manager/routes/routes')
 
 app.listen(port, console.log("Listening on port " + port));
 
-app.use('/task-management/task', router)
+app.use('/task', router)
 
 //app.use('/task-manager/tasks', router)
 

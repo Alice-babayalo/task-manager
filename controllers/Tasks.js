@@ -1,3 +1,4 @@
+const { response } = require('express');
 const Task=require('../models/Task');
 const getAllTasks= async (req,res)=>{
     try {
@@ -16,9 +17,42 @@ const createTask= async (req,res)=>{
         console.log(error);
     }
 }
-const getTask= async (req,res)=>{}
-const updateTask= async (req,res)=>{}
-const deleteTask= async (req,res)=>{}
+const getTask= async (req,res)=>{
+    try {
+        const task=await Task.findOne(req.params.id)
+        if(!task){
+            return res.status(404).json({message:"There is no task with id:"+id});
+        }
+        else {
+            res.json({task})
+        }
+    } catch (error) {
+        response.status(500).json({message:"Server error"});
+        console.log(error);
+    }
+}
+const updateTask= async (req,res)=>{
+    try {
+       const task=await Task.findByIdAndUpdate()
+
+    } catch (error) {
+        res.statuse(500).json({message:"Internal server arreor"})
+    }
+}
+const deleteTask= async (req,res)=>{
+    try {
+        const task=await Task.findByIdAndDelete(res.params.id)
+        if(!task){
+            return res.status(404).json({message:"There is no task with id:"+id});
+        }
+        else {
+            res.json({task})
+        }
+    }
+    catch (error) {
+         res.statuse(500).json({message:"Internal server arreor"})
+     }
+}
 
 module.exports={getAllTasks, createTask, getTask, updateTask, deleteTask};
 
