@@ -13,13 +13,6 @@ app.listen(port, console.log("Listening on port " + port));
 
 app.use('/task', router)
 
-//app.use('/task-manager/tasks', router)
-
-
-
-
-
-
-
+console.log("I love you!")
 
 //console.log(__filename)
